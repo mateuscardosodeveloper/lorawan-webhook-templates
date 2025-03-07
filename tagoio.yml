@@ -10,20 +10,16 @@ fields:
     name: Authorization
     description: TagoIO Authorization
     secret: true
-  - id: region
-    name: Region
-    # The TagoIO Region where your application is hosted:
-    # - us-e1: United States East Coast (Virginia)
-    # - eu-w1: European Union West (Ireland)
-    description: The TagoIO region where your application is hosted. Choose between the United States (us-e1) or the European Union (eu-w1). Default (us-e1).
-    secret: false
-    default: us-e1
+  - id: url
+    name: Base URL
+    description: The complete URL to TagoIO middleware. For TagoIO Cloud use either ttn.middleware.us-e1.tago.io (United States) or ttn.middleware.eu-w1.tago.io (European Union). For TagoIO Deploy users, please use your custom middleware URL.
+    default-value: ttn.middleware.us-e1.tago.io
     optional: true
 format: json
 headers:
   Authorization: "{auth}"
   Content-Type: application/json
 create-downlink-api-key: true
-base-url: https://ttn.middleware.{region}.tago.io
+base-url: https://{url}
 paths:
   uplink-message: /uplink
