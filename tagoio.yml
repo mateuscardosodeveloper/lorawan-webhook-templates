@@ -14,7 +14,7 @@ fields:
     name: Base URL
     description: The complete URL to TagoIO middleware. For TagoIO Cloud use either ttn.middleware.us-e1.tago.io (United States) or ttn.middleware.eu-w1.tago.io (European Union). For TagoIO Deploy users, please use your custom middleware URL.
     default-value: ttn.middleware.us-e1.tago.io
-    optional: true
+    optional: false
 format: json
 headers:
   Authorization: "{auth}"
